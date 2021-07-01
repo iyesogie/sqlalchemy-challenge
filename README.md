@@ -1,35 +1,40 @@
 # sqlalchemy-challenge
 
 Step 1 - Climate Analysis and Exploration
+
 To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
-* Use the provided starter notebook and hawaii.sqlite files to complete your climate analysis and data exploration.
-* Use SQLAlchemy create_engine to connect to your sqlite database.
-* Use SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
+* Use the provided√ästarter notebook√äand√ähawaii.sqlite√äfiles to complete your climate analysis and data exploration.
+* Use SQLAlchemy√äcreate_engine√äto connect to your sqlite database.
+* Use SQLAlchemy√äautomap_base()√äto reflect your tables into classes and save a reference to those classes called√äStation√äand√äMeasurement.
 * Link Python to the database by creating an SQLAlchemy session.
-* Important Don't forget to close out your session at the end of your notebook.
+* Important√äDon't forget to close out your session at the end of your notebook.
+
 Precipitation Analysis
+
 * Start by finding the most recent date in the data set.
-* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. Noteyou do not pass in the date as a variable to your query.
-* Select only the date and prcp values.
+* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data.√äNoteyou do not pass in the date as a variable to your query.
+* Select only the√ädate√äand√äprcp√ävalues.
 * Load the query results into a Pandas DataFrame and set the index to the date column.
-* Sort the DataFrame values by date.
-* Plot the results using the DataFrame plot method.
+* Sort the DataFrame values by√ädate.
+* Plot the results using the DataFrame√äplot√ämethod.
 * Use Pandas to print the summary statistics for the precipitation data.
+
 Station Analysis
+
 * Design a query to calculate the total number of stations in the dataset.
 * Design a query to find the most active stations (i.e. which stations have the most rows?).
 o List the stations and observation counts in descending order.
 o Which station id has the highest number of observations?
 o Using the most active station id, calculate the lowest, highest, and average temperature.
-o Hint: You will need to use a function such as func.min, func.max, func.avg, and func.count in your queries.
+o Hint: You will need to use a function such as√äfunc.min,√äfunc.max,√äfunc.avg, and√äfunc.count√äin your queries.
 * Design a query to retrieve the last 12 months of temperature observation data (TOBS).
 o Filter by the station with the highest number of observations.
 o Query the last 12 months of temperature observation data for this station.
-o Plot the results as a histogram with bins=12.
-
+o Plot the results as a histogram with√äbins=12.
 * Close out your session.
 
 Step 2 - Climate App
+
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 * Use Flask to create your routes.
 Routes
@@ -37,15 +42,15 @@ Routes
 o Home page.
 o List all routes that are available.
 * /api/v1.0/precipitation
-o Convert the query results to a dictionary using date as the key and prcp as the value.
+o Convert the query results to a dictionary using√ädate√äas the key and√äprcp√äas the value.
 o Return the JSON representation of your dictionary.
 * /api/v1.0/stations
 o Return a JSON list of stations from the dataset.
 * /api/v1.0/tobs
 o Query the dates and temperature observations of the most active station for the last year of data.
 o Return a JSON list of temperature observations (TOBS) for the previous year.
-* /api/v1.0/<start> and /api/v1.0/<start>/<end>
+* /api/v1.0/<start>√äand√ä/api/v1.0/<start>/<end>
 o Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-o When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
-o When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
+o When given the start only, calculate√äTMIN,√äTAVG, and√äTMAX√äfor all dates greater than and equal to the start date.
+o When given the start and the end date, calculate the√äTMIN,√äTAVG, and√äTMAX√äfor dates between the start and end date inclusive.
 
